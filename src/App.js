@@ -1,25 +1,29 @@
-import logo from './logo.svg';
+
+import { useState } from 'react';
 import './App.css';
+import CounterClass from './components/CounterClass';
+import CounterFun from './components/CounterFun';
+import User from './components/User';
+import Employee from './components/Employee'
 
 function App() {
+
+ 
+
+const [username,setUsername]=useState("Manu")
+const [age,setAge]=useState(25)
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <header className="App-header">
+      <CounterFun/>
+      <CounterClass/>
+      <User data={username} age={age}/>
+      <Employee/>
+</header>
+ </div>
+  );
 }
 
 export default App;
